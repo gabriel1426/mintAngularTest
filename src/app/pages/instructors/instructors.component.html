@@ -1,0 +1,273 @@
+<div class="container-fluid" style="width: 100%;">
+    <div *ngIf="detailView; else elseBlock">
+        <div class="side-bar">
+            <app-side-bar></app-side-bar>
+        </div>    
+        <div [ngStyle]="{'margin-top':'2.5em'}">
+            <div class="row align-items-cente" >
+                <div class="col-md-10 col-xs-12 tittle ">
+                    <p>Instructors</p>
+                </div>
+                <div class="col-md-2 view-options"  style="padding-top: 1.875em;">         
+                    <div *ngIf="normalView; else elseBlockIcon" >    
+                        <h4>View       
+                            <label class="btn" ngbButtonLabel (click)="changeListStyle()" class="animate__animated animate__headShake">
+                                <i-bs
+                                    name="grid"
+                                    class="green-text"
+                                    width="1.8rem"
+                                    height="1.8rem">
+                                </i-bs>
+                            </label> 
+                        </h4>  
+                    </div>
+                    <ng-template #elseBlockIcon >
+                        <h4>View
+                            <label class="btn" ngbButtonLabel (click)="changeListStyle()" class="animate__animated animate__headShake">
+                                <i-bs
+                                    name="view-stacked"
+                                    class="green-text"
+                                    width="1.7rem"
+                                    height="1.7rem">
+                                </i-bs>
+                            </label> 
+                        </h4>
+                    </ng-template> 
+                </div>
+            </div>
+            <div class="scrolling-wrapper grid-container align-items-center h-100">
+                <div class="card" *ngFor="let instructor of instructors" (click)="openInstructorDetails(instructor)">
+                    <div [ngClass]="{'active-gallery-list' : !normalView , 'active-gallery-up': normalView}"  [ngStyle]="{'background-color': instructor.mainBackground}">
+                        <img src="{{instructor.photo}}" alt="main-photo" class="main-photo">
+                        <p class="name-instructor">{{instructor.name}}</p>
+                        <p class="subject-instructor">{{instructor.subjects}}</p>
+                        <div [ngStyle]="{'margin-top':'2.5'}">
+                            <div class="subject-item" [ngStyle]="{'border-color': instructor.secondBackground}"  *ngFor="let description of instructor.descriptions" >
+                                {{description.description}}
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="normalView" class="active-gallery-down" [ngStyle]="{'background-color' : instructor.secondBackground}">
+                        <div class="sub-tittle" [ngStyle] = "{'padding-top' : '2.8125em'}" >
+                            STUDENTS
+                        </div>
+                        <div [ngStyle]="{'margin-top' : '1.4375em'}" >
+                            <div class="students-item"> 
+                                <img *ngFor="let student of instructor.students" src="{{student}}" alt="student-photo" class="student-photo" [ngStyle]="{'border-color': instructor.secondBackground}">                           
+                            </div> 
+                            <div class="students-item" > 
+                                <div class="more-student" [ngStyle]="{'border-color': instructor.secondBackground}">
+                                    <span>+10</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-tittle" [ngStyle] = "{'padding-top' : '1.5625em'}">
+                            RECENT PROJECTS
+                            </div>
+                        <div [ngStyle]="{'margin-top' : '1.125em'}" >
+                            <div class="students-item"> 
+                                <img *ngFor="let project of instructor.projects" src="{{project}}" alt="project-photo" class="project-photo" [ngStyle]="{'border-color': instructor.secondBackground}">                            
+                            </div> 
+                            <div class="students-item" > 
+                                <div class="more-projects" [ngStyle]="{'border-color': instructor.secondBackground}">
+                                    <span>+10</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="scrolling-wrapper grid-container align-items-center h-100" [ngStyle]="{'margin-top':'1.5625em'}" *ngIf="!normalView">
+                <div class="card" *ngFor="let instructor of instructorsDown" (click)="openInstructorDetails(instructor)">
+                    <div  [ngClass]="{'active-gallery-list' : !normalView , 'active-gallery-up': normalView}" [ngStyle]="{'background-color': instructor.mainBackground}">
+                        <img src="{{instructor.photo}}" alt="main-photo" class="main-photo">
+                        <p class="name-instructor">{{instructor.name}}</p>
+                        <p class="subject-instructor">{{instructor.subjects}}</p>
+                        <div [ngStyle]="{'margin-top':'2.5em'}">
+                            <div class="subject-item" [ngStyle]="{'border-color': instructor.secondBackground}"  *ngFor="let description of instructor.descriptions" >
+                                {{description.description}}
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="normalView" class="active-gallery-down" [ngStyle]="{'background-color' : instructor.secondBackground}">
+                        <div class="sub-tittle" [ngStyle] = "{'padding-top' : '2.8125em'}" >
+                            STUDENTS
+                        </div>
+                        <div [ngStyle]="{'margin-top' : '1.4375em'}" >
+                            <div class="students-item"> 
+                                <img *ngFor="let student of instructor.students" src="{{student}}" alt="student-photo" class="student-photo" [ngStyle]="{'border-color': instructor.secondBackground}">                           
+                            </div> 
+                            <div class="students-item" > 
+                                <div class="more-student" [ngStyle]="{'border-color': instructor.secondBackground}">
+                                    <span>+10</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-tittle" [ngStyle] = "{'padding-top' : '1.5625em'}">
+                            RECENT PROJECTS
+                            </div>
+                        <div [ngStyle]="{'margin-top' : '1.125em'}" >
+                            <div class="students-item"> 
+                                <img *ngFor="let project of instructor.projects" src="{{project}}" alt="project-photo" class="project-photo" [ngStyle]="{'border-color': instructor.secondBackground}">                            
+                            </div> 
+                            <div class="students-item" > 
+                                <div class="more-projects" [ngStyle]="{'border-color': instructor.secondBackground}">
+                                    <span>+10</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secction Details-->
+
+    <ng-template #elseBlock>
+        <div class="align-items-center">
+            <div class="tittle-section">
+                <i-bs
+                (click)="back()"
+                name="arrow-left-short"
+                style="float:left; cursor: pointer;"
+                width="3rem"
+                height="3rem">
+                </i-bs>         
+                <p>{{instructorSelected.name}}</p>
+            </div>
+
+            <div class="row details-container" >
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="grid-container">
+                        <div  class="detail-instructor-up" [ngStyle]="{'background-color': instructorSelected.mainBackground}">
+                            <img src="{{instructorSelected.photo}}" alt="main-photo" class="main-photo">
+                            <p class="name-instructor">{{instructorSelected.name}}</p>
+                            <p class="subject-instructor">{{instructorSelected.subjects}}</p>
+                            <div [ngStyle]="{'margin-top':'2.5em'}">
+                                <div class="subject-item" [ngStyle]="{'border-color': instructorSelected.secondBackground}"  *ngFor="let description of instructorSelected.descriptions" >
+                                    {{description.description}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail-instructor-down" [ngStyle]="{'background-color' : instructorSelected.secondBackground}">
+                            <div class="sub-tittle" [ngStyle] = "{'padding-top' : '2.8125em'}" >
+                                STUDENTS
+                            </div>
+                            <div [ngStyle]="{'margin-top' : '1.4375em'}" >
+                                <div class="students-item"> 
+                                    <img *ngFor="let student of instructorSelected.students" src="{{student}}" alt="student-photo" class="student-photo" [ngStyle]="{'border-color': instructorSelected.secondBackground}">                           
+                                </div> 
+                                <div class="students-item" > 
+                                    <div class="more-student" [ngStyle]="{'border-color': instructorSelected.secondBackground}">
+                                        <span>+10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-tittle" [ngStyle] = "{'padding-top' : '1.5625em'}">
+                                RECENT PROJECTS
+                                </div>
+                            <div [ngStyle]="{'margin-top' : '1.125em'}" >
+                                <div class="students-item"> 
+                                    <img *ngFor="let project of instructorSelected.projects" src="{{project}}" alt="project-photo" class="project-photo" [ngStyle]="{'border-color': instructorSelected.secondBackground}">                            
+                                </div> 
+                                <div class="students-item" > 
+                                    <div class="more-projects" [ngStyle]="{'border-color': instructorSelected.secondBackground}">
+                                        <span>+10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12">
+                    <div class="grid-container">
+                        <div  class="detail-instructor-up description-tittle">
+                            <p class="tittle-description">Description of the instructor and their background</p>
+                            <p class="margin-text-detail" [ngStyle]="{'font-size' : '.9rem'}">Loem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                Loem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
+                                took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+                                but also the leap into electronic typesetting.</p>
+                            
+                            <p style="display: inline;  bottom: 3.125em; font-weight: bold;">Loem ipsum dolor sit amet consectetur</p>
+                            <p style="float: right; font-weight: bold;"> <i-bs
+                                name="globe2"
+                                class="text-dark"
+                                width="1rem"
+                                height="1rem">
+                              </i-bs>  webpage</p>
+                            
+                            
+                        </div>
+                        <div class="detail-instructor-down center" [ngStyle]="{'background-color': instructorSelected.mainBackground,'border-radius':'22px'}">                            
+                            <i-bs
+                            name="image-fill"
+                            class="image-logo"
+                            width="3rem"
+                            height="3rem">
+                            </i-bs>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="grid-container">
+                        <div  class="detail-instructor-right-up center" [ngStyle]="{'background-color': instructorSelected.mainBackground}">
+                            <i-bs
+                            name="image-fill"
+                            class="image-logo"
+                            width="3rem"
+                            height="3rem">
+                          </i-bs>
+                        </div>
+                        <div class="detail-instructor-right-down" [ngStyle]="{'background-color' : instructorSelected.secondBackground}">
+                            <div style="float: left; height: 100%;">
+                                <img style="height: 5.625em;  margin: 1.5625em; border-radius: 50%;" src="{{instructorSelected.students[0]}}" alt="">
+                            </div>
+                            <i-bs
+                                name="three-dots-vertical"
+                                style="float: right; margin: 1.5625em .75em; color:white; height: 100%;"
+                                width="1.3rem"
+                                height="1.3rem">
+                            </i-bs>
+                            <div style="text-align: start;">
+                                <br>
+                                <br>
+                                <p style="font-size: 1.375rem; font-weight: bold; color: white;">Name Surname</p>
+                                <br>
+                                <p style="color: white; font-size: .875rem;">
+                                Student Review "Loem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                Loem Ipsum has been the industry's standard dummy text ever since the 1500s".
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </ng-template>    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

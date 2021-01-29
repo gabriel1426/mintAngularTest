@@ -1,0 +1,98 @@
+.content-subjects{
+    padding: 0em 3.75em;
+    max-height: 100%;
+}
+
+.left{
+    height: 21.875em;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+} 
+
+.right{
+    height: 21.875em;
+    padding: 3.125em;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+} 
+
+.pos-right-item{
+    position: absolute;
+    right: .625rem;
+    top: .75rem
+}
+
+
+.subject-tittle{
+    font-weight: bold;
+    margin: 0em;
+    font-size: 1.5625rem;
+}
+
+.subject-subtittle{
+    font-weight: 400;
+}
+
+.item-subject-contente{
+    padding: 1.5625em 1.5625em 0em 1.5625em;    
+}
+
+.subject-description{
+    width: 100%;
+    margin-top: .9375em;
+    margin-bottom: 1.5625em;
+}
+
+.tittle-section{
+    margin-bottom: 0em;
+}
+
+
+@media (max-width: 1512px) {
+    
+    .subject-description{
+        margin-top: .03125em;
+        margin-bottom: 0rem;
+    }
+
+    .pos-right-item{
+        left: 0;
+        top: 4.6875rem
+    }
+
+    .subject-description{
+      margin-top:  3.75rem
+    }
+
+    .left, .right {
+        height: 26.875rem
+    }
+}
+
+.scrolling-wrapper{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;  
+}
+
+@media (max-width: 1240px) {
+    
+    .left, .right {
+        height: 32.5rem
+    }
+}
+
+@media (max-width: 780px) {
+    
+    .left {
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius:  25px;        
+    }
+
+    .right{
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+}

@@ -1,0 +1,104 @@
+
+
+.days-contente{    
+    margin-top: .625rem;
+}
+
+
+.tittle{
+    text-align: center; 
+    font-size: 2.8125rem;
+    font-weight: 650;
+    color: #31755E;
+}
+
+.filter-icon{
+    color: #31755E;
+}
+
+.days{
+    color: #46A786;
+    background-color: #F5FBF9;
+}
+.number-day{
+    font-size: 2.375rem;
+    text-align: center;
+    margin-top: -0.75rem
+}
+.name-day{
+    font-size: 1.375rem;
+    text-align: center;
+}
+.day-item{
+    padding: .625rem 1.25rem;
+    border-radius: 25px; 
+    cursor: pointer; 
+}
+
+.tittle-section{
+    margin-bottom: 0em;
+}
+
+.daySelected{
+    padding: .625em 1.5625em;
+    border-radius: 25px;   
+    background-color: #46A786;
+    color: white;
+}
+
+.hours-backgroud{
+    top: 6.25em;
+}
+
+.line-day{
+    height: 100%;
+    top: 1.875rem;
+}
+
+.scrolling-wrapper{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;  
+    .card {
+        display: inline-block;
+        margin: 0em .75em 0em .75em;
+        border: 0;
+        cursor: pointer;
+      }
+}
+
+.filters{
+    margin: 1em 2.1875rem 0.75em 3em;
+    text-align: end;
+    font-size: 1.25rem;
+    color: #31755E;
+}
+
+.bordered {
+    display: inline-block;
+    padding: 1.25em;
+    /* Fallback dashed border
+       - the 4px width here is overwritten with the border-image-width (if set)
+       - the border-image-width can be omitted below if it is the same as the 4px here
+    */
+    border-left: dashed 1px #000;
+    border-right: dashed 1px #000;
+    /* Individual border image properties */
+    border-image-source: url("http://i.stack.imgur.com/wLdVc.png");
+    border-image-slice: 2;
+    border-image-repeat: round;  
+    /* or use the shorthand border-image */
+    border-image: url("http://i.stack.imgur.com/wLdVc.png") 2 round;
+  }
+  
+  
+  /*The border image of this one creates wider gaps*/
+  .largeGaps {
+    border-image-source: url("http://i.stack.imgur.com/LKclP.png");
+    margin: 0 1.25em;
+  }
+
+  .dorder-solid{
+      border-left: solid 1px #000 !important;
+      margin: 0 1.25em;
+  }

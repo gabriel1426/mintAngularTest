@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+    font-size: 16px;
+}
+
+.side-bar{
+    float: left;
+}
+
+.green-text{
+    color: #31755E;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dis-flex{
+    display: flex;
+}
+
+.container-scroll{
+    max-height: 50rem;
+    overflow-y: auto;
+}
+
+.tittle-section{
+    text-align: center; 
+    margin: 1em 35px .75em 3em;
+    font-size: 2.8125rem;
+    font-weight: 650;
+    color: #31755E;
+}
+
+.subject-item{
+    border-style: solid; 
+    border-width: .0625em;
+    display: inline; 
+    background: white; 
+    font-size: .75rem; 
+    padding: .4375em; 
+    border-radius: .3125em; 
+    margin: 1.25em .1875em 0em .1875em;
+}
+
+.social-icons{
+    padding: .9375rem;
+}
+
+@media (max-width: 770px) {
+    .side-bar {
+      float: none;
+    }
+}
+
+@media (max-width: 1400px) {
+    body{
+      font-size: 13px;
+    }
+}
+

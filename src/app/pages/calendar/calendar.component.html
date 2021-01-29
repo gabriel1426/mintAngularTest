@@ -1,0 +1,88 @@
+<div class="container-fluid" >
+    <div class="side-bar">
+        <app-side-bar></app-side-bar>
+    </div>    
+    <div >
+        <div >   
+            <div class="row green-text"  [ngStyle]="{'margin-top': '1.25rem','font-size':'1.375rem'}" >
+                <div class="col-3" style="padding-top: 2.25rem">
+                    <i-bs
+                    name="circle"
+                    class="green-text"
+                    width="1.7rem"
+                    height="1.7rem">
+                  </i-bs>
+                  <span style="padding-left:.625rem">Select</span> 
+                </div>
+                <div class="col-6 d-flex justify-content-center tittle" style="padding-top: 1.25rem">
+                    Calendar
+                </div>
+                <div class="col-3 d-flex justify-content-end" style="font-size: 1.375rem; padding-top: 1.25rem; text-align: center;" >
+                    <div class="p-2" >
+                            <i-bs
+                            name="calendar-event"
+                            class="green-text"
+                            width="2rem"
+                            height="2rem">
+                            </i-bs> day
+                    </div>
+                    <div class="p-2">
+                            <i-bs
+                            name="calendar-minus"
+                            class="green-text"
+                            width="2rem"
+                            height="2rem">
+                            </i-bs> Week
+                    </div>
+                    <div class="p-2">
+                            <i-bs
+                            name="calendar-week"
+                            class="green-text"
+                            width="2rem"
+                            height="2rem">
+                          </i-bs> Month
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <div class="row days-contente scrolling-wrapper">
+            <div class="dis-flex days">
+                <div *ngFor="let day of dayList; let i = index"  (click)="selectedDay(i)" [ngClass]="{'daySelected': day.id == selectedDayId, 'day-item': day.id != selectedDayId}" >
+                    <div class="name-day">
+                        {{day.day}}  {{day.id}}
+                    </div>
+                    <div class="number-day">
+                        {{day.number}}
+                    </div>
+                </div>
+            </div>
+            <div class="hours-backgroud ">
+                <div class="dis-flex">
+                    <div *ngFor="let day of dayList; let i = index" [ngClass]="{'bordered largeGaps': i % 5 != 0, 'dorder-solid': i % 5 == 0}" style="height: 37.5rem">                                        
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

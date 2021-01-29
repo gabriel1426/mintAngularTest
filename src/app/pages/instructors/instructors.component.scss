@@ -1,0 +1,183 @@
+
+.tittle{
+    text-align: center; 
+    font-size: 2.8125rem;
+    font-weight: 650;
+    color: #31755E;
+}
+
+
+.view-options{
+    text-align: end;
+    color: #31755E;
+}
+
+.active-gallery-up{
+    height: 25em;
+    width: 19.6875em;
+    border-top-left-radius: 1.375em;
+    border-top-right-radius: 1.375em;
+}
+
+.active-gallery-down{
+    height: 18.75em;
+    width: 19.6875em;
+    border-bottom-left-radius: 1.375em;
+    border-bottom-right-radius: 1.375em;
+}
+
+.active-gallery-list{
+    height: 25em;
+    width: 19.6875em;
+    border-radius: 1.375em;
+}
+
+.grid-container{
+    text-align: center; 
+    padding-left: .625em;
+}
+
+.main-photo{
+    border-radius: 50%;
+    margin-top: 3.75em;
+    height: 7.5em;
+}
+
+.name-instructor{
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-top: 1.875em;
+    color: black;
+
+}
+.subject-instructor{
+    color: black;
+    font-size: .875rem;
+    margin-top: -0.625em;
+    font-weight: 500;
+}
+.scrolling-wrapper{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;  
+    .card {
+        display: inline-block;
+        margin: 0em .75em 0em .75em;
+        border: 0;
+        cursor: pointer;
+      }
+}
+
+.sub-tittle{
+    color: white;
+    font-size: .6875rem;
+}
+
+.student-photo{
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 50%;
+    border: .125em solid;
+    margin-left: -0.5em;
+}
+
+.students-item{
+    display: inline; 
+    font-size: .75rem; 
+}
+
+.more-student{
+    display: inline; 
+    background: white;
+    padding: .5625em .375em;
+    font-weight: bold;
+    border: .125em solid;
+    margin-left: -0.5em;
+    border-radius: 50% ;
+}
+
+.project-photo{
+    height: 3.75em;
+    width: 20%;
+    border-radius: 10%;
+    margin: 0em .3125em;
+}
+
+
+.more-projects{
+    display: inline; 
+    background: white;
+    padding: 1.3125em 1.125em 1.4375em 1.125em;
+    font-weight: bold;
+    margin: 0em .3125em;
+    border-radius: 10% ;
+}
+
+.details-container{
+
+    margin: 0em 5em;
+    .col-md-3, .col-md-4, .col-md-5{
+        padding-left: .3125em;
+        padding-right: .3125em;
+    }
+}
+
+.detail-instructor-up{
+    height: 25em;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+}
+
+.detail-instructor-down{
+    height: 18.75em;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+
+.detail-instructor-right-up{
+    height: 23.75em;
+    border-radius: 1.375em;
+}
+
+.detail-instructor-right-down{
+    margin-top: 1.25em;
+    height: 18.75em;
+    border-radius: 22px;    
+}
+
+.image-logo{
+    color: white;
+}
+
+.description-tittle{
+    text-align: start;
+}
+.tittle-description {
+    font-size: 2.5rem;
+}
+.margin-text-detail{
+    margin-top: 5em;
+}
+
+
+@media (max-width: 1470px) {
+    .tittle-description {
+      font-size: 2rem;
+    }
+    
+    .margin-text-detail{
+        margin-top:  2.1875rem;
+     }
+}
+
+@media (max-width: 1200px) {
+    .tittle-description {
+      font-size: 1.5rem;
+    }
+    
+    .margin-text-detail{
+        margin-top:  1.25rem;
+     }
+ }
+
+

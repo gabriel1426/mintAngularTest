@@ -1,0 +1,42 @@
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #58B092;
+}
+
+.nav-text{
+    color: white;
+    margin: 10px 30px 10px 30px;
+}
+
+.selected{
+    border-bottom: 5px solid white;    
+    color: white !important;
+}
+
+.btn-options{
+    color: #D5EBE3;
+    font-size: 20px;
+    padding: 25px 25px 33px 25px;
+    margin: 0px;
+}
+
+.nav-items{
+    height: 100%;
+}
+
+.nav-icons{
+    margin: 0px 10px 0px 10px;
+}
+
+
+@media (max-width: 770px) {
+    .nav-text{
+      text-align: center;
+    }
+    .d-flex{
+        display: block !important;
+    }
+}
+
+
+  
