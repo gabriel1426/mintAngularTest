@@ -5,7 +5,7 @@
     <div >
         <div >   
             <div class="row green-text"  [ngStyle]="{'margin-top': '1.25rem','font-size':'1.375rem'}" >
-                <div class="col-3" style="padding-top: 2.25rem">
+                <div class="col-md-2 col-sm-12 col-xs-12" style="padding-top: 2.25rem">
                     <i-bs
                     name="circle"
                     class="green-text"
@@ -14,10 +14,10 @@
                   </i-bs>
                   <span style="padding-left:.625rem">Select</span> 
                 </div>
-                <div class="col-6 d-flex justify-content-center tittle" style="padding-top: 1.25rem">
+                <div class="col-md-7 col-sm-12 col-xs-12 d-flex justify-content-center tittle" style="padding-top: 1.25rem">
                     Calendar
                 </div>
-                <div class="col-3 d-flex justify-content-end" style="font-size: 1.375rem; padding-top: 1.25rem; text-align: center;" >
+                <div class="col-md-3 col-sm-12 col-xs-12 d-flex justify-content-end" style="font-size: 1.375rem; padding-top: 1.25rem; text-align: center;" >
                     <div class="p-2" >
                             <i-bs
                             name="calendar-event"
@@ -49,19 +49,32 @@
             <div class="dis-flex days">
                 <div *ngFor="let day of dayList; let i = index"  (click)="selectedDay(i)" [ngClass]="{'daySelected': day.id == selectedDayId, 'day-item': day.id != selectedDayId}" >
                     <div class="name-day">
-                        {{day.day}}  {{day.id}}
+                        {{day.day}}
                     </div>
                     <div class="number-day">
                         {{day.number}}
                     </div>
                 </div>
             </div>
-            <div class="hours-backgroud ">
-                <div class="dis-flex">
-                    <div *ngFor="let day of dayList; let i = index" [ngClass]="{'bordered largeGaps': i % 5 != 0, 'dorder-solid': i % 5 == 0}" style="height: 37.5rem">                                        
+            <br>
+            <div style="position: relative;">
+                <div class="hours-backgroud ">
+                    <div class="dis-flex">
+                        <div *ngFor="let day of hoursList; let i = index" [ngClass]="{'bordered largeGaps': i % 5 != 0, 'dorder-solid': i % 5 == 0}" style="height: 37.5rem">                                        
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div *ngFor="let instructor of instructors">
+                       <div class="marker" *ngFor="let item of instructor.items" [ngStyle]="{'top':item.top,'left':item.left, 'background-color':instructor.mainBackground}">
+                            <img src="{{instructor.photo}}" alt="" class="avatar">
+
+                            <span style="font-size: 1.25rem; padding-left: .9375rem; ">{{instructor.subjects}}</span> 
+                       </div>
                     </div>
                 </div>
             </div>
+            
         </div> 
     </div>
 </div>

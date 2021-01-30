@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'instructors', component:InstructorsComponent},
   {path:'subjects', component:SubjectsComponent},
   {path:'calendar', component:CalendarComponent},
-  {path:'', redirectTo:'/instructors',pathMatch:'full'},
+  {path:'', redirectTo:'/calendar',pathMatch:'full'},
   {path:'**', redirectTo:'/404'},
 ];
 

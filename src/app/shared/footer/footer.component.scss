@@ -8,3 +8,14 @@
 .autor{
     font-size: 1.25rem;
 }
+
+
+@media (max-width: 1200px) {
+    .tittle-description {
+      font-size: 1.5rem;
+    }
+    
+    .margin-text-detail{
+        margin-top:  1.25rem;
+     }
+ }

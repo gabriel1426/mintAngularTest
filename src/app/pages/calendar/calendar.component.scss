@@ -76,7 +76,6 @@
 
 .bordered {
     display: inline-block;
-    padding: 1.25em;
     /* Fallback dashed border
        - the 4px width here is overwritten with the border-image-width (if set)
        - the border-image-width can be omitted below if it is the same as the 4px here
@@ -89,16 +88,29 @@
     border-image-repeat: round;  
     /* or use the shorthand border-image */
     border-image: url("http://i.stack.imgur.com/wLdVc.png") 2 round;
-  }
-  
-  
-  /*The border image of this one creates wider gaps*/
-  .largeGaps {
-    border-image-source: url("http://i.stack.imgur.com/LKclP.png");
-    margin: 0 1.25em;
-  }
+}
+ 
+/*The border image of this one creates wider gaps*/
+.largeGaps {
+border-image-source: url("http://i.stack.imgur.com/LKclP.png");
+margin: 0 1.25em;
+}
 
-  .dorder-solid{
-      border-left: solid 1px #000 !important;
-      margin: 0 1.25em;
-  }
+.dorder-solid{
+    border-left: solid 1px #000 !important;
+    margin: 0 1.25em;
+}
+
+.marker{
+    position: absolute; 
+    width: 15.625em;
+    padding: .4375em .625em;
+    border-radius: 25px;    
+    color: white;
+}
+
+
+.avatar{
+    height: 2.8125em;
+    border-radius: 50%;
+}

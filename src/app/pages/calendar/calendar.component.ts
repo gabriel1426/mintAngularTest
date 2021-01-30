@@ -8,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class CalendarComponent implements OnInit {
 
   dayList = new Array();
+  hoursList = new Array();
   selectedDayId:number = 0;
+
+  instructors : any = [    
+    {id: 1, instructor:'Leanne Graham',subjects:'Mathematics', mainBackground : '', items:[{top:'3.125rem',left:'25px'},{top:'3.125rem',left:'600px'},{top:'3.125rem',left:'1200px'}],photo : "https://images.generated.photos/GRiWGc3a-BTeuzM2U3q9XG3rQRl3fWKHqoa8lcvSt3E/rs:fit:256:256/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLzAy/ODgwOTAuanBn.jpg"},    
+    {id: 2, instructor:'Patricia Lebsack',subjects:'Reinforcement',  mainBackground : '', items:[{top:'10rem',left:'5px'}, {top:'10rem',left:'490px'},{top:'10rem',left:'950px'}],photo : "https://images.generated.photos/GRiWGc3a-BTeuzM2U3q9XG3rQRl3fWKHqoa8lcvSt3E/rs:fit:256:256/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLzAy/ODgwOTAuanBn.jpg"},        
+    {id: 3, instructor:'Kurtis Weissnat',subjects:'Computer Scienc', mainBackground : '', items:[{top:'16.875rem',left:'250px'},{ top:'16.875rem',left:'680px'},{top:'16.875rem',left:'1200px'}],photo : "https://images.generated.photos/GRiWGc3a-BTeuzM2U3q9XG3rQRl3fWKHqoa8lcvSt3E/rs:fit:256:256/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLzAy/ODgwOTAuanBn.jpg"},        
+    {id: 4, instructor:'Clementina DuBuque', subjects:'Music ', mainBackground : '', items:[{top:'23.75rem',left:'120px'},{top:'23.75rem',left:'580px'},{top:'23.75rem',left:'1050px'}], photo : "https://images.generated.photos/GRiWGc3a-BTeuzM2U3q9XG3rQRl3fWKHqoa8lcvSt3E/rs:fit:256:256/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLzAy/ODgwOTAuanBn.jpg"},        
+    {id: 5, instructor:'Glenna Reichert', subjects:'Economics ', mainBackground : '', items:[{top:'30.625rem',left:'15px'},{top:'30.625rem',left:'720px'},{top:'30.625rem',left:'1350px'}], photo : "https://images.generated.photos/GRiWGc3a-BTeuzM2U3q9XG3rQRl3fWKHqoa8lcvSt3E/rs:fit:256:256/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zLzAy/ODgwOTAuanBn.jpg"},    
+  ];
 
   constructor() { 
     this.generatArrayDays();
+    this.generateArrayHours();
+    this.addRandomBackground();
   }
 
   ngOnInit(): void {
@@ -55,6 +66,22 @@ export class CalendarComponent implements OnInit {
       }
       id = id+7;
     }
+  }
+
+  generateArrayHours(){
+    for (let index = 0; index < 60; index++) {
+      this.hoursList.push({'id':index})
+    }
+  }
+  addRandomBackground(){
+    this.instructors.forEach(element => {
+      var color = "("+this.generarNumero(255)+"," + this.generarNumero(255) + "," + this.generarNumero(255) + "," ;
+      element.mainBackground = "rgba" + color +"1)";
+    });
+  }
+
+   generarNumero(numero){
+    return (Math.random()*numero).toFixed(0);
   }
 
   selectedDay(day: any){
