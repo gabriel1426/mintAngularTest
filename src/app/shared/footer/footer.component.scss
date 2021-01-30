@@ -5,10 +5,20 @@
     margin-right:  1.5625em
 }
 
+.footer-container{
+    display: flex;
+}
+
 .autor{
     font-size: 1.25rem;
 }
 
+@media (max-width: 720px) {
+    .footer-container{
+        text-align: center;
+        display: block;
+    }
+ }
 
 @media (max-width: 1200px) {
     .tittle-description {

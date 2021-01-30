@@ -18,7 +18,7 @@
                     Calendar
                 </div>
                 <div class="col-md-3 col-sm-12 col-xs-12 d-flex justify-content-end" style="font-size: 1.375rem; padding-top: 1.25rem; text-align: center;" >
-                    <div class="p-2" >
+                    <div class="p-2">
                             <i-bs
                             name="calendar-event"
                             class="green-text"
@@ -29,7 +29,7 @@
                     <div class="p-2">
                             <i-bs
                             name="calendar-minus"
-                            class="green-text"
+                            class="unselected"
                             width="2rem"
                             height="2rem">
                             </i-bs> Week
@@ -37,7 +37,7 @@
                     <div class="p-2">
                             <i-bs
                             name="calendar-week"
-                            class="green-text"
+                            class="unselected"
                             width="2rem"
                             height="2rem">
                           </i-bs> Month
@@ -61,6 +61,9 @@
                 <div class="hours-backgroud ">
                     <div class="dis-flex">
                         <div *ngFor="let day of hoursList; let i = index" [ngClass]="{'bordered largeGaps': i % 5 != 0, 'dorder-solid': i % 5 == 0}" style="height: 37.5rem">                                        
+                            <div class="green-text" *ngIf="i % 5 == 0" style="position: absolute;top: -25px; margin-left: -20px;" [ngStyle]="{'left': i}">
+                                {{i}} : 00
+                            </div>
                         </div>
                     </div>
                 </div>

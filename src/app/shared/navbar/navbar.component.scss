@@ -14,6 +14,7 @@
 }
 
 .btn-options{
+    width: 100%;
     color: #D5EBE3;
     font-size: 20px;
     padding: 25px 25px 33px 25px;
@@ -38,5 +39,12 @@
     }
 }
 
+
+@media (max-width: 1470px) {
+    .nav-text{
+      text-align: center;
+      font-size: 1.375rem;
+    }
+}
 
   

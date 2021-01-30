@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-side-bar',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SideBarComponent implements OnInit {
 
- 
+  section:string;
 
   elementToRead: any = [  
     {
@@ -90,7 +91,7 @@ export class SideBarComponent implements OnInit {
     }
   ];
 
-  constructor(private actRoute: ActivatedRoute) {
+  constructor(private actRoute: ActivatedRoute, private modalService: NgbModal) {
     let section:string = this.actRoute.snapshot.url.toString();
     this.showSideBarSection(section);
    }
@@ -112,7 +113,13 @@ export class SideBarComponent implements OnInit {
           this.elementToRead = this.events;
         break;
     }
+    this.section=section;
   }
 
+  openModal(content) {
+    if(this.section=='calendar'){
+      this.modalService.open(content, { centered: true });
+    }    
+  }
 
 }
