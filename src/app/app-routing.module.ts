@@ -9,8 +9,8 @@ const routes: Routes = [
   {path:'instructors', component:InstructorsComponent},
   {path:'subjects', component:SubjectsComponent},
   {path:'calendar', component:CalendarComponent},
-  {path:'', redirectTo:'/calendar',pathMatch:'full'},
-  {path:'**', redirectTo:'/404'},
+  {path:'', redirectTo:'/instructors',pathMatch:'full'},
+  {path:'**', redirectTo:'/instructors'},
 ];
 
 @NgModule({
